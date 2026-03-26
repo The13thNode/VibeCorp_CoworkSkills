@@ -11,7 +11,7 @@ If you have a framework, methodology, or structured thinking approach that belon
 ## How to Contribute
 
 1. **Fork the repository**
-   Fork [pushhkarnagela/VibeCorp_CoworkSkills](https://github.com/pushhkarnagela/VibeCorp_CoworkSkills) to your GitHub account.
+   Fork [The13thNode/VibeCorp_CoworkSkills](https://github.com/The13thNode/VibeCorp_CoworkSkills) to your GitHub account.
 
 2. **Create a feature branch**
    Use a descriptive branch name:
@@ -91,4 +91,4 @@ This project follows the [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.
 
 ## Questions?
 
-Open an issue on the [GitHub Issues page](https://github.com/pushhkarnagela/VibeCorp_CoworkSkills/issues). Label it `question` and describe what you need.
+Open an issue on the [GitHub Issues page](https://github.com/The13thNode/VibeCorp_CoworkSkills/issues). Label it `question` and describe what you need.

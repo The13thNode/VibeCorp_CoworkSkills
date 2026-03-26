@@ -2,6 +2,15 @@
 
 Strategic thinking skills for Claude.ai Cowork. Each skill is a self-contained prompt that activates a specific reasoning mode — no tools, no MCP, no setup. Just paste and think.
 
+## Complete Beginner? Start Here
+
+Never used Claude or GitHub before? No problem.
+
+1. **[Step-by-Step Guide](docs/STEP_BY_STEP_GUIDE.md)** — Takes you from zero to running your first skill in 5 minutes
+2. **[FAQ](docs/FAQ.md)** — Answers every question, starting from "What is Claude?"
+
+No coding, no installs, no technical knowledge required.
+
 ## Who This Is For
 
 - **Startup founders** validating ideas, sizing markets, preparing for investors
@@ -32,7 +41,7 @@ Strategic thinking skills for Claude.ai Cowork. Each skill is a self-contained p
 3. Paste it into a new [Claude.ai](https://claude.ai) conversation
 4. Start talking about your specific situation
 
-See [USAGE.md](skills/USAGE.md) for detailed instructions, tips, and a skill selection guide.
+See [USAGE.md](skills/USAGE.md) for detailed instructions, tips, and a skill selection guide. See [FAQ](docs/FAQ.md) for common questions.
 
 ## How It Works
 
@@ -45,7 +54,7 @@ Each skill file contains:
 
 ## Skill Combinations
 
-Some skills chain naturally:
+Some skills chain naturally — the output of one becomes the input for the next:
 
 ```
 Idea validation flow:
@@ -57,6 +66,9 @@ Full business validation:
 Strategic planning:
   ceo-thinking-partner (mode: brainstorm) → roadmap-planning → stakeholder-management
 
+Investment readiness:
+  problem-validation → market-sizing → investor-prep
+
 Organizational change:
   stakeholder-management → change-management
 
@@ -64,12 +76,40 @@ Mid-session reset:
   Any skill → strategic-challenger (paste mid-conversation to reorient)
 ```
 
+See [USAGE.md — Skill Router Pattern](skills/USAGE.md#skill-router-pattern) for how to manage multi-skill workflows.
+
 ## Design Principles
 
 - **Pure reasoning** — no tools, no file system, no MCP servers. Works in any Claude.ai conversation.
 - **Self-contained** — each skill works independently. No dependencies between files.
 - **Opinionated frameworks** — these aren't generic prompts. Each embeds specific methodologies with scoring systems, decision gates, and structured outputs.
 - **Practical over theoretical** — every framework includes worked examples with real numbers.
+
+## Documentation
+
+| Document | What It Covers |
+|----------|---------------|
+| [Step-by-Step Guide](docs/STEP_BY_STEP_GUIDE.md) | Absolute beginner walkthrough — zero to first skill in 5 minutes |
+| [FAQ](docs/FAQ.md) | Common questions for beginners and intermediate users |
+| [USAGE.md](skills/USAGE.md) | Three usage modes, skill routing, cross-validation, multi-chat management |
+| [CONTRIBUTING.md](CONTRIBUTING.md) | How to contribute skills and improvements |
+| [REPO_STANDARDS.md](REPO_STANDARDS.md) | Security standards and metadata scrub procedures |
+
+## References
+
+These resources informed the design of CoworkSkills:
+
+- [Claude Skills Overview](https://zapier.com/blog/claude-skills/) — Zapier
+- [Awesome Claude Skills](https://github.com/ComposioHQ/awesome-claude-skills) — ComposioHQ
+- [The Complete Guide to Claude Skills](https://tylerfolkman.substack.com/p/the-complete-guide-to-claude-skills) — Tyler Folkman
+- [Patience Is All You Need](https://medium.com/code-wild/patience-is-all-you-need-63b936d71eac) — Code Wild
+- [Use Skills in Claude (Official)](https://support.claude.com/en/articles/12512180-use-skills-in-claude) — Anthropic
+- [Building Skills for Claude (PDF)](https://resources.anthropic.com/hubfs/The-Complete-Guide-to-Building-Skill-for-Claude.pdf) — Anthropic
+- [Claude Guides: Code, Cowork, Skills, Workflows](https://karozieminski.substack.com/p/claude-guides-code-cowork-skills-workflows) — Karo Zieminski
+
+## Disclaimer
+
+We are not affiliated with Anthropic. These are community-created skills, not officially supported products. Use at your own discretion.
 
 ## License
 

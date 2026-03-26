@@ -22,90 +22,235 @@ CoworkSkills are designed for startup founders and business strategists. They as
 - Designed to ask before they advise (they gather context first)
 
 **What they are not:**
-- Automation or agents
+- Automation or agents (those live in Claude Code, not here)
 - A replacement for domain experts, lawyers, or therapists
-- Permanent memory — each conversation starts fresh
+- Permanent memory — each conversation starts fresh (unless you use Projects)
 
 ---
 
-## How to Use a Skill (Step by Step)
+## Three Ways to Use These Skills
 
-### Step 1: Go to claude.ai
+There are three approaches, each with real trade-offs. Pick the one that fits how you work.
 
-Open a browser and navigate to claude.ai. Log in to your account. You will be on the main chat interface — a clean text input with no conversation history.
+### Option A: Single Chat, Single Skill (Simplest)
 
-Start a new conversation. Do not paste a skill into an existing conversation that already has context; this can confuse the model about which instructions to follow.
+Paste one skill into a fresh Claude.ai chat. One conversation, one framework, one problem.
 
-### Step 2: Open the skill .md file
+**Best for:** Focused work on a single topic — validating one idea, sizing one market, prepping for one investor meeting.
 
-Find the skill file you want to use in the `skills/` folder of this repository. Open it in any text editor — Notepad, VS Code, TextEdit, or even GitHub's file viewer in a browser.
+**How to do it:**
+1. Go to [claude.ai](https://claude.ai)
+2. Start a new conversation
+3. Paste the skill prompt (from the COPY FROM HERE / COPY TO HERE block)
+4. Answer the questions and work through the framework
 
-Skill files are plain text. They are readable as-is and do not require any special software.
+| Pros | Cons |
+|------|------|
+| No confusion — one framework, one context | No memory between chats |
+| Clean context window, no hallucination across topics | Manual context transfer if you chain skills |
+| Works on Free tier — no Projects needed | You re-explain your situation each time |
+| Fastest to start | |
 
-### Step 3: Copy the paste-ready prompt
+**Tool:** Claude.ai free chat (any tier)
 
-Every skill file contains a clearly marked block:
+### Option B: Claude Projects (Recommended for Multi-Skill Work)
 
-```
-## COPY FROM HERE
+Upload multiple skills to a Project's Knowledge base. Claude has access to all of them across every conversation in that project, with shared memory.
 
-[The prompt text you want to paste]
+**Best for:** Ongoing product development where you need multiple perspectives — market sizing today, pricing tomorrow, GTM next week — all with persistent context about your company.
 
-## COPY TO HERE
-```
+**How to do it:**
+1. Create a new Project in Claude.ai (requires Pro or Team plan)
+2. Upload 3-4 skill .md files to the Project Knowledge section
+3. Start conversations within the project — Claude loads relevant skills automatically
+4. Your company context persists across conversations
 
-Select all the text between these two markers — from the first word after "COPY FROM HERE" to the last word before "COPY TO HERE." Copy it to your clipboard.
+For official setup instructions, see: [Use Skills in Claude](https://support.claude.com/en/articles/12512180-use-skills-in-claude)
 
-Do not include the marker lines themselves. Only copy the prompt content between them.
+| Pros | Cons |
+|------|------|
+| Memory persists across conversations | Requires Pro or Team plan |
+| Skills always available — no re-pasting | Claude may blend frameworks if too many skills loaded |
+| Claude picks the right skill based on your question | Uses more tokens per conversation |
+| Shared context means less repetition | Requires deliberate project setup |
 
-### Step 4: Paste into a new Claude.ai conversation
+**Tool:** Claude.ai Projects (Pro/Team plan)
 
-Click into the chat input box in Claude.ai. Paste the copied text. Do not add anything else yet — just paste the skill prompt on its own.
+### Option C: Isolated Chats, No Shared Memory (Power User)
 
-Hit Send (or press Enter, depending on your setup).
+Run separate chats per skill with deliberately no memory sharing. Each conversation is a sealed environment.
 
-Claude will read the skill instructions and respond according to the framework — typically by asking you the Phase 1 diagnostic questions to understand your specific situation.
+**Best for:** Working on multiple projects simultaneously without cross-contamination. A consulting founder running three different ventures. An advisor working with multiple startups.
 
-### Step 5: Start your conversation
+**How to do it:**
+1. Open separate conversations for each skill
+2. Turn off memory sharing (or use separate browser profiles)
+3. Name each chat clearly (e.g., "Market-Sizing-ProjectX", "GTM-ProjectY")
+4. Manually transfer key decisions between chats when needed
 
-Answer Claude's questions. The more specific and honest you are, the more useful the output will be.
+| Pros | Cons |
+|------|------|
+| Zero hallucination across projects | Manual transfer of decisions between chats |
+| Clean separation of concerns | More effort to maintain coherence |
+| No risk of framework blending | You are the integration layer |
+| Works on any tier | Requires discipline to name and organize chats |
 
-The skills are designed to ask before they advise. Resist the urge to dump everything at once — let the skill's structure guide you. The questions are there to surface context you might not have thought to share.
+**Tool:** Claude.ai with memory OFF per chat, or separate browser profiles
 
-From this point, have a normal conversation. You can ask follow-up questions, push back on recommendations, request different formats, or ask Claude to go deeper on any section.
+### Comparison Table
+
+| | Single Chat | Projects | Isolated Chats |
+|---|---|---|---|
+| **Setup effort** | None | Medium | Low |
+| **Memory** | None | Shared | None (deliberate) |
+| **Multi-skill** | No | Yes (auto-routed) | Yes (manual) |
+| **Cross-contamination risk** | None | Low-medium | None |
+| **Cost** | Free tier works | Pro/Team required | Free tier works |
+| **Best for** | One-off tasks | Ongoing projects | Multi-project work |
 
 ---
 
-## Tips for Best Results
+## Skill Combinations
 
-**Use one skill per conversation.**
+Some skills chain naturally. The output of one becomes the input for the next.
 
-Each skill sets up a specific reasoning mode. Mixing two skill prompts in one conversation can create conflicting instructions. If you need to shift from roadmap planning to stakeholder management, open a new conversation and paste the relevant skill.
+### Idea Validation Flow
+```
+problem-validation → market-sizing → pricing-strategy → gtm-playbook → investor-prep
+```
+Start with "is this a real problem?" and end with a pitch-ready narrative. Each skill builds on the previous one's conclusions.
 
-**Be specific about your situation.**
+### Full Business Validation
+```
+business-validation-flow (orchestrates the above automatically)
+```
+If you want the full pipeline in a single conversation, `business-validation-flow.md` has all 7 stages with built-in go/no-go gates. This is the single-chat alternative to chaining individual skills.
 
-Generic input produces generic output. Instead of "I have a startup," say "I have a 12-person B2B SaaS company, we're at $300K ARR, and we're deciding whether to go upmarket to enterprise or double down on SMB." The skill frameworks are designed to handle real complexity.
+### Strategic Planning
+```
+ceo-thinking-partner (mode: brainstorm) → roadmap-planning → stakeholder-management
+```
+Generate options, sequence them into a roadmap, then plan the alignment conversations with your team and board.
 
-**Challenge Claude's output.**
+### Organizational Change
+```
+stakeholder-management → change-management
+```
+Map who matters and what they care about, then build the adoption and communication plan.
 
-These skills are frameworks, not oracles. If a recommendation doesn't feel right, say so. "That doesn't fit our situation because..." is a valid and useful response. Claude will adjust.
+### Investment Readiness
+```
+problem-validation → market-sizing → investor-prep
+```
+Validate your story with data before building the pitch. Investors ask the same questions these skills answer.
 
-**You can chain skills across conversations.**
+### Mid-Session Reset
+```
+Any skill → strategic-challenger (paste mid-conversation)
+```
+Unlike other skills, `strategic-challenger.md` is designed to be pasted mid-conversation. Use it when Claude is being too agreeable or the discussion has gone off-track.
 
-If you are working through a strategic decision, you might:
-1. Use `ceo-thinking-partner.md` to clarify your strategy
-2. Then open a new conversation with `roadmap-planning.md` to sequence the work
-3. Then open another with `stakeholder-management.md` to plan the alignment conversations
+---
 
-Each conversation is fresh, but you carry the thinking forward.
+## Skill Router Pattern
 
-**The Strategic Challenger skill can be pasted mid-conversation.**
+When you have multiple skills available, you need a way to pick the right one. There are four routing approaches:
 
-Unlike the other skills, `strategic-challenger.md` is designed to be used as an interrupt — you can paste it into an existing conversation when you want Claude to stop agreeing with you and start stress-testing your assumptions. You do not need a fresh conversation for this one.
+### Automatic Routing (Projects Only)
+When multiple skills are uploaded to a Claude Project's Knowledge base, Claude reads your intent and loads the relevant skill automatically. Ask "help me size the market for this idea" and Claude activates the market-sizing framework without you specifying it.
 
-**Paste the full skill block, including the framework structure.**
+**Limitation:** Works well with 3-4 skills. With 8+ skills loaded, Claude may blend frameworks or pick the wrong one. Keep your Project focused.
 
-Some users try to summarize or shorten the skill prompt. Don't. The methodology sections shape how Claude reasons through your problem. The full prompt is the product.
+### Manual Routing
+You paste the specific skill you want at the start of each chat. No ambiguity, no wrong picks.
+
+**Best for:** Free tier users, or when you know exactly which framework you need.
+
+### Chained Routing
+Output of one skill feeds the next. You finish problem validation, copy the key conclusions, open a new chat, paste the market-sizing skill, and provide the conclusions as context.
+
+**Best for:** Multi-stage analysis where each stage needs a clean framework.
+
+### Orchestrator Chat Pattern
+Maintain one "control room" chat that tracks which skills you've run and what decisions were made. This chat doesn't use a skill itself — it's your index.
+
+**How it works:**
+1. Open an orchestrator chat (no skill pasted)
+2. After each skill session, summarize the key decisions in the orchestrator
+3. Before starting the next skill, check the orchestrator for context
+4. The orchestrator tells you what to run next and what context to carry forward
+
+**Best for:** Complex, multi-week strategic work where you're running 5+ skill sessions.
+
+### Important Note
+This is **not** the same as MCP-based skill routing in Claude Code. Claude Code has tool-based agents that can read files, execute code, and chain actions automatically. CoworkSkills are pure chat-based reasoning for Claude.ai — the human is always the router between conversations.
+
+---
+
+## Managing Multiple Chats
+
+When you're running several skill sessions in parallel, organization matters.
+
+**Name your chats by skill and date:**
+- "CEO-Brainstorm-Mar26"
+- "Market-Sizing-ProjectX"
+- "Investor-Prep-SeriesA-Draft2"
+
+**Keep an orchestrator chat as your index.** After each skill session, drop a 3-line summary into the orchestrator: what you ran, what you decided, what's next.
+
+**When switching skills, transfer decisions — not transcripts.** Copy the 5-10 key conclusions, not the entire conversation. The new skill needs your decisions, not the reasoning path that got you there.
+
+**Use strategic-challenger.md as a mid-conversation interrupt.** If any skill session starts going in circles or Claude becomes too agreeable, paste the challenger skill to force a reset.
+
+**Review your orchestrator before each new session.** It takes 30 seconds and prevents you from re-doing work or contradicting earlier decisions.
+
+---
+
+## Cross-Skill Validation
+
+When you run multiple skills, how do you ensure consistency? The answer depends on your setup.
+
+### Scenario 1: Same Project, Shared Memory (Projects)
+Claude remembers previous conversations. If your market-sizing session concluded "SOM is $5M" and your pricing session assumes a $50M market, Claude can flag the inconsistency — but only if both conversations happened within the same Project.
+
+**Validation is semi-automatic.** Claude has the context to cross-check, but it won't always do so unprompted. Ask: "Is this consistent with what we concluded in our market-sizing conversation?"
+
+### Scenario 2: Same Project, No Memory
+If you've disabled memory within a Project, each conversation is independent. Claude cannot cross-validate because it doesn't know what happened in other chats.
+
+**Validation is manual.** You must carry the key numbers and decisions between chats yourself.
+
+### Scenario 3: Different Projects or Free Tier
+No shared context at all. Each conversation is completely isolated.
+
+**You are the validator.** Copy key conclusions between chats. Use the orchestrator chat pattern to track decisions and catch contradictions.
+
+### Scenario 4: Single Chat with business-validation-flow.md
+The `business-validation-flow.md` skill handles cross-validation internally. It runs all 7 stages sequentially in one conversation, with go/no-go gates between each stage. If your market size doesn't support your revenue model, the skill catches it at the gate.
+
+**Validation is built in.** This is the recommended approach if you want automatic consistency checking without Projects.
+
+### Recommendation
+If cross-validation matters to you (and it should), choose one of:
+- **Projects with memory ON** — semi-automatic cross-checking
+- **business-validation-flow.md in a single chat** — fully internal validation with gates
+- **Orchestrator chat pattern** — manual but systematic
+
+Don't rely on hope. Pick a validation method before you start.
+
+---
+
+## When NOT to Use Multiple Skills
+
+- **If your project is early stage**, `business-validation-flow.md` alone covers 80% of what you need. It walks you through idea → problem → evidence → market → revenue → GTM → build decision in one conversation. Don't over-complicate it.
+
+- **Don't load all 11 skills into one Project.** Claude will blend frameworks, give confused advice, and waste tokens. Pick 3-4 skills relevant to your current phase.
+
+- **If Claude starts mixing advice from different frameworks**, it's a sign you have too many skills loaded or the conversation is too long. Start a fresh chat with a single skill.
+
+- **If you're exploring, not deciding**, just use `ceo-thinking-partner.md`. It has 7 modes that cover brainstorming through stress-testing. Save the specialized skills for when you know what you're working on.
+
+- **If you don't have real data yet**, most skills will give you structured speculation instead of structured analysis. Run `problem-validation.md` first to identify what evidence you actually need, then go collect it before running the other skills.
 
 ---
 
@@ -122,40 +267,41 @@ Some users try to summarize or shorten the skill prompt. Don't. The methodology 
 | Design a pricing strategy | `pricing-strategy.md` |
 | Build a go-to-market plan for a launch | `gtm-playbook.md` |
 | Prepare for investor conversations or fundraising | `investor-prep.md` |
-| Validate a business model or new venture | `business-validation-flow.md` |
+| Validate a full business model end-to-end | `business-validation-flow.md` |
 | Build and prioritize a product or company roadmap | `roadmap-planning.md` |
 | Map stakeholders and get alignment before a key decision | `stakeholder-management.md` |
 | Roll out a change and drive adoption across a team | `change-management.md` |
 
-If you are not sure which skill to use, start with `ceo-thinking-partner.md`. It is the broadest skill and will help you figure out which specific framework you need next.
+**Not sure where to start?**
+- New idea, no validation yet → `business-validation-flow.md`
+- Existing project, need strategic clarity → `ceo-thinking-partner.md`
+- Preparing to raise money → `investor-prep.md`
+- Something feels off but you can't name it → `strategic-challenger.md`
 
 ---
 
 ## Troubleshooting Common Issues
 
 **Claude responded but didn't ask the Phase 1 questions.**
-
-This can happen if Claude interpreted your paste as a document to summarize rather than instructions to follow. Add a line after pasting: "I have just pasted a skill prompt. Please begin by asking me the Phase 1 questions." This resets the context.
+Add a line after pasting: "I have just pasted a skill prompt. Please begin by asking me the Phase 1 questions." This resets the context.
 
 **The skill seems to have been forgotten partway through a long conversation.**
-
-Claude.ai has a context window — very long conversations can cause earlier instructions to fade in influence. If you notice the quality of responses declining, either start a fresh conversation with the skill pasted again, or re-paste the skill prompt mid-conversation with a note: "Please continue using the framework from the skill prompt I shared earlier."
+Claude.ai has a context window — very long conversations can cause earlier instructions to fade. Start a fresh conversation with the skill pasted again, or re-paste the skill prompt mid-conversation.
 
 **Claude is giving me generic advice instead of using the frameworks.**
-
-This usually means the Phase 1 questions were not answered with enough specificity. Go back and give more concrete details — specific numbers, specific names of competitors, specific team sizes, specific constraints. The frameworks activate when there is real context to work with.
+The Phase 1 questions were not answered with enough specificity. Give more concrete details — specific numbers, competitors, team sizes, constraints. The frameworks activate when there is real context to work with.
 
 **The output is too long and covering things I don't need.**
-
 Tell Claude exactly what you need: "Focus only on the RICE scoring for items 3, 5, and 7. Skip the rest for now." Skills are designed to be used interactively, not consumed as a wall of output.
 
 **I want a specific section without running the full skill.**
-
-You can ask directly. For example: "Using the ADKAR model from the change management framework, help me diagnose why my team hasn't adopted the new CRM." You do not have to run the full Phase 1-7 structure every time. The frameworks are reference tools.
+Ask directly: "Using the ADKAR model from the change management framework, help me diagnose why my team hasn't adopted the new CRM." You do not have to run the full Phase 1-7 structure every time.
 
 **The skill asks questions I can't answer yet.**
-
 That is useful information. If you cannot answer "What is the one metric that matters for this phase?" it means you have not yet defined it. The skill is surfacing a gap, not blocking you. Say "I don't know yet" and Claude will help you figure it out.
+
+**Claude is mixing advice from different frameworks.**
+You likely have too many skills loaded in a Project, or you pasted multiple skills in one chat. Start a fresh conversation with only the skill you need.
 
 ---
 
@@ -163,39 +309,40 @@ That is useful information. If you cannot answer "What is the one metric that ma
 
 CoworkSkills are plain text files. They are yours to edit.
 
-**Add company context to the top of a skill:**
-
-Before the skill prompt (but still within the COPY FROM HERE block), add a section like:
+**Add company context to the top of a skill.** Before the skill prompt, add a section like:
 
 ```
 Context about my company: We are a 15-person product analytics SaaS, Series A, $2M ARR,
-selling to mid-market tech companies. Our biggest challenge is churn. Our engineering team
-is strong but our sales process is undefined. Keep this context in mind throughout.
+selling to mid-market tech companies. Our biggest challenge is churn.
 ```
 
 This saves you from re-explaining your situation every conversation.
 
-**Remove frameworks that are not relevant to your stage:**
+**Remove frameworks that don't apply to your stage.** If you are pre-revenue, the RICE scoring section requires usage data you don't have. Delete that section — MoSCoW and ICE will carry the weight.
 
-If you are pre-revenue, the RICE scoring section in the Roadmap Planning skill requires usage data you do not have. Delete or comment out that section. The MoSCoW and ICE sections will carry the weight.
+**Adjust the persona.** Change "senior product strategist" to "senior operations leader at a logistics company" to shift the framing and vocabulary.
 
-**Adjust the persona:**
-
-If "senior product strategist" is not the right voice for your industry, change the first line. "You are a senior operations leader at a logistics company" will shift the framing and vocabulary Claude uses throughout the conversation.
-
-**Save customized versions as new files:**
-
-If you have made useful edits to a skill for your specific context, save it as a new file. For example: `roadmap-planning-enterprise.md` alongside the original `roadmap-planning.md`. Keep the original untouched so you can refer back to it.
-
-**Create your own skills:**
-
-The format is simple:
-1. A COPY FROM HERE / COPY TO HERE block with structured instructions for Claude
-2. A framework reference section for your own understanding
+**Create your own skills.** The format is simple:
+1. A COPY FROM HERE / COPY TO HERE block with structured instructions
+2. A framework reference section
 3. An example conversation
 4. When to use / not to use guidance
 
-If you build a skill that works well, consider contributing it back to the repository.
+For the official Anthropic skill creation guide, see: [Skill Creator on GitHub](https://github.com/anthropics/skills/blob/main/skills/skill-creator/SKILL.md)
+
+---
+
+## References and Further Reading
+
+These resources informed the design of CoworkSkills and are worth reading if you want to go deeper:
+
+- [Claude Skills Overview](https://zapier.com/blog/claude-skills/) — Zapier's guide to using skills effectively
+- [Awesome Claude Skills](https://github.com/ComposioHQ/awesome-claude-skills) — ComposioHQ's curated collection of community skills
+- [The Complete Guide to Claude Skills](https://tylerfolkman.substack.com/p/the-complete-guide-to-claude-skills) — Tyler Folkman's deep dive on skill creation and progressive disclosure
+- [Patience Is All You Need](https://medium.com/code-wild/patience-is-all-you-need-63b936d71eac) — Lessons on structured AI workflows and spec-driven development
+- [Use Skills in Claude (Official)](https://support.claude.com/en/articles/12512180-use-skills-in-claude) — Anthropic's official guide to enabling and uploading skills
+- [Building Skills for Claude (PDF)](https://resources.anthropic.com/hubfs/The-Complete-Guide-to-Building-Skill-for-Claude.pdf) — Anthropic's complete guide to skill design
+- [Claude Guides: Code, Cowork, Skills, Workflows](https://karozieminski.substack.com/p/claude-guides-code-cowork-skills-workflows) — Karo Zieminski's overview of the Claude ecosystem
 
 ---
 
@@ -205,4 +352,6 @@ Built by VibeCorp for founders and strategists who use Claude.ai as a thinking p
 
 They are opinionated by design. The best frameworks make trade-offs explicit and force decisions. If a skill pushes back harder than you expected, that is intentional.
 
-For questions, contributions, or feedback, open an issue in the repository.
+We are not affiliated with Anthropic. These are community-created skills, not officially supported products.
+
+For questions, contributions, or feedback, open an issue in the [repository](https://github.com/The13thNode/VibeCorp_CoworkSkills/issues).
